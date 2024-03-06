@@ -15,4 +15,31 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
+
+Route::get('/metals', function () {
+    $alkalines = [
+        ['name' => 'Litio'],
+        ['name' => 'Sodio'],
+        ['name' => 'Potassio']
+    ];
+    $transitions = [
+        ['name' => 'Ferro'],
+        ['name' => 'Titanio'],
+        ['name' => 'Cobalto']
+    ];
+
+    $data = compact('alkalines','transitions');
+    return view('elements.metals', $data);
+})->name('metals');
+
+Route::get('/gas', function () {
+    $gas = [
+        ['name' => 'Elio'],
+        ['name' => 'Neon'],
+        ['name' => 'Argo']
+    ];
+
+    $data = compact('gas');
+    return view('elements.gas', $data);
+})->name('gas');

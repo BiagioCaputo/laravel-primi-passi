@@ -7,6 +7,16 @@
     <title>primi-passi-laravel</title>
 </head>
 <body>
-    <h1>Hello world!</h1>
+    <header>
+        <h2><a href='{{ route('metals')}}'>Metalli</a></h2>
+        <h2><a href='{{ route('gas')}}'>Gas</a></h2>
+    </header>
+    <h1>Tavola elementi!</h1>
 </body>
 </html>
+
+<style>
+    *{
+        text-align: center;
+    }
+</style>
